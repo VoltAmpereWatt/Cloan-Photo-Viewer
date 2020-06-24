@@ -1,0 +1,13 @@
+.header{background-color:#2f4f4f;color:#f5f5f5}
+.nav-button{margin:10px}
+#prev-page{width:100px;position:absolute;left:10px}
+#next-page{width:100px;position:absolute;right:10px}
+#root>div{text-align:center;margin:auto}
+#root>div>div.centered>svg.bi{width:100px;height:30px;margin-left:10px;margin-right:10px}
+#root>div>div>div.full>img{display:block;max-width:100%;text-align:center;margin-left:auto;margin-right:auto;margin-top:1%;margin-bottom:1%}
+#root>div>div>div.tile>img{max-width:20%;margin:1%;display:inline;flex-direction:row;flex-wrap:wrap}
+#root>div>form>div>div>input{margin:5px;border:solid 1px #d3d3d3;border-radius:5px;padding:5px}
+#root>div>form>div>div>button{margin:5px;border:solid 1px #d3d3d3;border-radius:5px;padding:5px}
+#image-upload-form{text-align:center}
+#root > div > div > div:nth-child(5) > div > div{border:none;box-shadow: none;}
+#root > div > div > div:nth-child(5) > div{margin:10px auto; width:80%}
