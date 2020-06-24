@@ -12,18 +12,24 @@ const URI = require('./config/index');
 
 // Creating express server
 const app = express();
+const usersRouter = require('./routes/users');
+app.use('/users', usersRouter);
+
+const imagesRouter = require('./routes/images');
+app.use('/images', imagesRouter);
 
 //Serve static assets in productio
 
 // Port that server will be on
-const port = process.env.PORT || 5000;
+app.use(cors());
+
 app.use(express.static(path.join(__dirname, '../build')))
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build'))
 })
+const port = process.env.PORT || 5000;
 
 // cors middleware
-app.use(cors());
 // allows server to parse json since that's what this server will do
 app.use(express.json());
 
@@ -42,11 +48,6 @@ connection.once('open', () => {
 
 // // the server will use the files created in routes
 // const exercisesRouter = require('./routes/exercises');
-const usersRouter = require('./routes/users');
-app.use('/users', usersRouter);
-
-const imagesRouter = require('./routes/images');
-app.use('/images', imagesRouter);
 
 
 app.listen(port, () => {
