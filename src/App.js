@@ -62,7 +62,7 @@ export default class App extends Component {
     console.log('before post')
     axios.post('/users/login', user)
       .then((res) => {
-        if (res.status === 200) window.location = `/gallery/${this.state.username}`;
+        window.location = `/gallery/${this.state.username}`;
       })
       .catch(res => setTimeout(function () {
         alert(res)
