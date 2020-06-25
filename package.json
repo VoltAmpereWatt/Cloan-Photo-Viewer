@@ -26,9 +26,9 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "",
+    "build": "set \"INLINE_RUNTIME_CHUNK=false\" && react-scripts build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -51,5 +51,5 @@
     ]
   },
   "proxy": "http://localhost:5000",
-  "secure":false
+  "secure": false
 }
