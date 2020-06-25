@@ -13,3 +13,13 @@
 #root > div > div > div:nth-child(5) > div{margin:10px auto; width:80%}
 #root > div > div > div:nth-child(6) > div > div{box-shadow:none;}
 .fileUploader{margin-bottom:10px} 
+.source-link {
+    text-align:center;
+    position:static;
+    bottom:0px;
+    width:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left: auto;
+    margin-right:auto;
+ }
