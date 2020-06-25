@@ -56,7 +56,7 @@ export default class App extends Component {
       username: this.state.username,
       password: Crypto.SHA256(this.state.password).toString()
     }
-    console.log(user.password)
+    console.log(user)
     // Appending username to gallery url. username is extracted in route and passed to Gallery component
     // In gallery component, username prop is used to make get request and get image urls
     console.log('before post')

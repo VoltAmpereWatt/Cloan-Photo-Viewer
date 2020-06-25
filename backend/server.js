@@ -12,6 +12,7 @@ const URI = require('./config/index');
 
 // Creating express server
 const app = express();
+app.use(express.json());
 const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
 
@@ -31,7 +32,6 @@ const port = process.env.PORT || 5000;
 
 // cors middleware
 // allows server to parse json since that's what this server will do
-app.use(express.json());
 
 // Database URI from mongo db atlas dashboard
 // have to set MONGODB_URI environment variable.
