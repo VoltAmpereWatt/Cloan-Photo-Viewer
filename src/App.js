@@ -25,8 +25,8 @@ export default class App extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.logout = this.logout.bind(this);
   }
-  logout(event){
-    this.setState({username:"",password:"", signedOut: true})
+  logout(event) {
+    this.setState({ username: "", password: "", signedOut: true })
   }
 
   gridToggle(event) {
@@ -38,7 +38,6 @@ export default class App extends Component {
   }
 
   handleUsernameChange(event) {
-    // console.log(this.state.username)
     this.setState({ username: event.target.value })
   }
 
