@@ -2,6 +2,8 @@ import React from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import ImageUploader from 'react-images-upload';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 export default class Gallery extends React.Component {
   constructor(props) {
@@ -62,10 +64,7 @@ export default class Gallery extends React.Component {
   populateImages = () => {
     axios.get(`/images/fetch/${this.props.username}`)
       .then((res) => {
-        console.log(typeof(res))
-        console.log(res)
         this.setState({ images: res.data.map((image, index) => <img key={index} src={image.url} alt={image._id} />) });
-        this.state.images.forEach(image=>console.log(image.props.src))
       })
       .catch(err => console.log('Loading' + err))
   }
@@ -74,6 +73,7 @@ export default class Gallery extends React.Component {
     // console.log(this.props.states)
     return (
       <div>
+        <Link to="/" onClick={this.props.logoutFunc}>Logout</Link>
         <div>
           <button
             className={'btn btn-light centered'}
@@ -100,6 +100,7 @@ export default class Gallery extends React.Component {
               buttonClassName={'btn btn-secondary'}
               buttonText='Choose images'
               onChange={this.onDrop}
+              label={'Max file size: 5 MB, Acceptable formats: JPEG, GIF, PNG'}
               imgExtension={['.jpg', '.gif', '.png']}
               maxFileSize={5242880}
             />

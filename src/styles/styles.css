@@ -11,3 +11,5 @@
 #image-upload-form{text-align:center}
 #root > div > div > div:nth-child(5) > div > div{border:none;box-shadow: none;}
 #root > div > div > div:nth-child(5) > div{margin:10px auto; width:80%}
+#root > div > div > div:nth-child(6) > div > div{box-shadow:none;}
+.fileUploader{margin-bottom:10px} 
