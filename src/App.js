@@ -16,15 +16,17 @@ export default class App extends Component {
       grid: true,
       username: "",
       password: "",
-      signedOut: true,
+      signedOut: false,
       something: ''
     }
     this.gridToggle = this.gridToggle.bind(this)
     this.handleUsernameChange = this.handleUsernameChange.bind(this)
     this.handlePasswordChange = this.handlePasswordChange.bind(this)
-    this.signedOutToggle = this.signedOutToggle.bind(this)
     this.onSubmit = this.onSubmit.bind(this);
-    // this.imageUpload = this.imageUpload.bind(this);
+    this.logout = this.logout.bind(this);
+  }
+  logout(event){
+    this.setState({username:"",password:"", signedOut: true})
   }
 
   gridToggle(event) {
@@ -40,14 +42,6 @@ export default class App extends Component {
     this.setState({ username: event.target.value })
   }
 
-  signedOutToggle(event) {
-    this.setState({
-      signedOut: !this.state.signedOut,
-    })
-    this.setState({
-      username: this.state.signedOut ? "rrr392" : ""
-    })
-  }
 
   onSubmit(e) {
     // This line prevents default HTML form submission behavior
@@ -89,7 +83,7 @@ export default class App extends Component {
               username={props.match.params.id}
               galleryStyle={this.state.grid ? 'tile' : 'full'}
               gridToggle={this.gridToggle}
-              gridView={this.state.grid} />} />
+              gridView={this.state.grid} logoutFunc={this.logout} />} />
         </div>
       </Router>);
   }

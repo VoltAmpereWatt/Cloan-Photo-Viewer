@@ -27,10 +27,10 @@ router.route('/add').post((req, res) => {
 
 router.route('/login').post((req, res) => {
   // return function (req, res) {
-    console.log(req.data)
+    // console.log(req.data)
     Users.countDocuments({ username: req.body.username, password: req.body.password }, function (error, result) {
       if (result === 1) {
-        console.log(result)
+        // console.log(result)
         res.json(result);
       }
       else res.status(400).send('User not found')
