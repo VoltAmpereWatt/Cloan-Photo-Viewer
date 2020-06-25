@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Gallery from "./components/gallery.component";
 import Navbar from "./components/navbar.component";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from './components/login.component';
 import axios from 'axios';
 import Crypto from 'crypto-js';
@@ -16,7 +16,7 @@ export default class App extends Component {
       grid: true,
       username: "",
       password: "",
-      signedOut: true,
+      signedOut: false,
       something: ''
     }
     this.gridToggle = this.gridToggle.bind(this)
@@ -56,7 +56,6 @@ export default class App extends Component {
     axios.post('/users/login', user)
       .then((res) => {
         window.location = `/gallery/${this.state.username}`;
-        this.setState({ signedOut: !this.state.signedOut })
       })
       .catch(res => setTimeout(function () {
         alert(res)
@@ -71,7 +70,7 @@ export default class App extends Component {
         <div className={'container'}>
           <Navbar appName={'Photo Viewer'}
             username={this.state.username}
-            logoutFunc={this.logout}
+            signoutToggleFunc={this.signedOutToggle}
             signedOutFlag={this.state.signedOut} />
           {/* <Redirect to="/users/login" /> */}
           <Route path="/" exact render={(props) => <Login {...props}
@@ -84,9 +83,6 @@ export default class App extends Component {
               galleryStyle={this.state.grid ? 'tile' : 'full'}
               gridToggle={this.gridToggle}
               gridView={this.state.grid} logoutFunc={this.logout} />} />
-        </div>
-        <div>
-          <a href={"https://github.com/VoltAmpereWatt/Cloan-Photo-Viewer.git"} className={'source-link btn btn-light border'}>View Source</a>
         </div>
       </Router>);
   }

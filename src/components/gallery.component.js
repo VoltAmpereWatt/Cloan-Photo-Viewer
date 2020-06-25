@@ -2,6 +2,7 @@ import React from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import ImageUploader from 'react-images-upload';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 export default class Gallery extends React.Component {
@@ -72,6 +73,7 @@ export default class Gallery extends React.Component {
     // console.log(this.props.states)
     return (
       <div>
+        <Link to="/" onClick={this.props.logoutFunc}>Logout</Link>
         <div>
           <button
             className={'btn btn-light centered'}
