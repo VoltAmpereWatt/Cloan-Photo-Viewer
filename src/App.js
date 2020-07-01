@@ -68,7 +68,7 @@ export default class App extends Component {
     return (
       <Router>
         <div className={'container'}>
-          <Navbar appName={'Photo Viewer'}
+          <Navbar appName={'pvCloan'}
             username={this.state.username}
             signoutToggleFunc={this.signedOutToggle}
             signedOutFlag={this.state.signedOut} />

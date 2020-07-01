@@ -20,7 +20,8 @@ function Login(props) {
             placeholder={'Password'}></input>
         </div>
         <div>
-          <input type={"submit"} value={"Login"} className={"btn btn-dark col-md-6"} />
+          <input type={"submit"} value={"Login"} className={"btn btn-dark col-md-3"} />
+          <input type={"submit"} value={"Sign Up"} className={"btn btn-primary col-md-3"} />
           {/* <button type={'submit'} id={'login-button'} className={'btn btn-dark col-md-6'}>Login</button> */}
         </div>
       </div>
